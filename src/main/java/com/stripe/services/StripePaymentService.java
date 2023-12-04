@@ -3,11 +3,10 @@ package com.stripe.services;
 import com.stripe.model.CustomerData;
 import com.stripe.model.PaymentData;
 import com.stripe.repositories.CustomerRepo;
+import com.stripe.repositories.ProductRepo;
 import com.stripe.repositories.StripePaymentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class StripePaymentService {
@@ -17,6 +16,8 @@ public class StripePaymentService {
 
     @Autowired
     CustomerRepo customerRepo;
+   @Autowired
+    ProductRepo productRepo;
 
     public PaymentData createPaymentMethod(PaymentData paymentData1)
     {
@@ -31,4 +32,7 @@ public class StripePaymentService {
 //    public Optional<CustomerData> getCustomer(String email) {
 //        return customerRepo.findById(email);
 //    }
+
+
+
 }
